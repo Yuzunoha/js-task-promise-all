@@ -60,7 +60,7 @@ class SleepController extends Controller
     $retStr = $this->arr17[$idx];
 
     /* sleep処理 */
-    $ms = 21 - $num; // 1なら20ms, 17なら4ms
+    $ms = mt_rand(1, 500); // 最大0.5秒スリープする
     $this->sleepMs($ms);
 
     /* json返却処理 */
