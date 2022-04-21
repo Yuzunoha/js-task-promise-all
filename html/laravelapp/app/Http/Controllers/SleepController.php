@@ -40,6 +40,17 @@ class SleepController extends Controller
     $this->utilService->throwHttpResponseException($message);
   }
 
+  /**
+   * 与えられた整数のミリ秒スリープする
+   */
+  protected function sleepMs(int $ms): void
+  {
+    // 0.5秒スリープさせるにはusleep(500000);
+    // 0.05秒スリープさせるにはusleep(50000);
+    // 0.005秒(5ミリ秒)スリープさせるにはusleep(5000);
+    usleep($ms * 1000);
+  }
+
   public function sleepApi(int $num): string
   {
     /* ガード処理 */
@@ -51,6 +62,8 @@ class SleepController extends Controller
     $retStr = $this->arr17[$idx];
 
     /* sleep処理 */
+    $ms = 21 - $num; // 1なら20ms, 17なら4ms
+    $this->sleepMs($ms);
 
     /* json返却処理 */
     return json_encode($retStr);
