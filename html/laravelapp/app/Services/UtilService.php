@@ -29,7 +29,7 @@ class UtilService
     return 'ip不明';
   }
 
-  public function throwHttpResponseException($message, int $status = 400): void
+  public function throwHttpResponseException(string $message, int $status = 400): void
   {
     $res = response()->json([
       'status' => $status,
