@@ -6,13 +6,18 @@ use App\Models\Title;
 use App\Services\UtilService;
 use Illuminate\Http\Request;
 
-class TitleController extends Controller
+class SleepController extends Controller
 {
   protected $utilService;
 
   public function __construct(UtilService $utilService)
   {
     $this->utilService = $utilService;
+  }
+
+  public function sleepApi(int $ms): string
+  {
+    return json_encode($ms);
   }
 
   public function delimiter()

@@ -14,9 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/delimiter', 'TitleController@delimiter');
-Route::get('/maxnum', 'TitleController@maxnum');
-Route::get('/first/{id}', 'TitleController@first');
-Route::get('/second/{id}', 'TitleController@second');
-Route::get('/third/{id}', 'TitleController@third');
-Route::get('/check/{id}', 'TitleController@check');
+Route::get('/sleep-api/{ms}', 'SleepController@sleepApi');
