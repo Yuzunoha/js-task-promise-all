@@ -1,4 +1,4 @@
-FROM php:7.4-apache
+FROM php:8.1-apache
 
 # 設定ファイルをdockerコンテナ内のPHP、Apacheに読み込ませる
 ADD php.ini /usr/local/etc/php/

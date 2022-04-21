@@ -10,14 +10,50 @@ class SleepController extends Controller
 {
   protected $utilService;
 
+  protected $arr17 = [
+    '00000000000000                                                    00000000000000000000                          00000000                00000000000000000000000000',
+    '    000000                                    00                      0000            0000                  00            00            00          0000        00',
+    '    0000                                    0000                      0000              0000            0000                0000                    0000          ',
+    '    0000                                    000000                    0000              000000          0000                0000                    0000          ',
+    '    0000                                  00  0000                    0000                0000        0000                    0000                  0000          ',
+    '    0000                                  00  000000                  0000              000000        0000                    0000                  0000          ',
+    '    0000                                00      0000                  0000              0000        000000                    000000                0000          ',
+    '    0000                                00      000000                0000            0000          0000                      000000                0000          ',
+    '    0000                                00        0000                000000000000000000            0000                        0000                0000          ',
+    '    0000                              00          0000                0000            000000        0000                        0000                0000          ',
+    '    0000                              00          000000              0000              000000      000000                    000000                0000          ',
+    '    0000                            00000000000000000000              0000                0000        0000                    0000                  0000          ',
+    '    0000                            00              000000            0000                0000        0000                    0000                  0000          ',
+    '    0000                          00                  0000            0000                0000          0000                0000                    0000          ',
+    '    0000                00        00                  000000          0000              000000          0000                0000                    0000          ',
+    '    0000              0000      0000                  000000          0000            000000              0000          0000                      000000          ',
+    '000000000000000000000000      00000000              000000000000  0000000000000000000000                      0000000000                      00000000000000      ',
+  ];
+
+  protected $fnThrow;
+
   public function __construct(UtilService $utilService)
   {
     $this->utilService = $utilService;
+    // $this->fnThrow = fn (string $msg): void => $this->utilService->throwHttpResponseException($msg);
   }
 
-  public function sleepApi(int $ms): string
+  public function sleepApi(int $num): string
   {
-    return json_encode($ms);
+    return json_encode($num);
+
+    /* ガード処理 */
+    // if ($num < 0 || count($this->arr17) <= $num) {
+    //   // ($this->$fnThrow)('apiが対応していない数値です: ' . $num);
+    //   $msg = 'apiが対応していない数値です: ' . $num;
+    //   $this->utilService->throwHttpResponseException($msg);
+    // }
+
+    /* sleep処理 */
+    // TODO
+
+    /* json返却処理 */
+    // return json_encode($this->arr17[$num]);
   }
 
   public function delimiter()

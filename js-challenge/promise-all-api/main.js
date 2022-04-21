@@ -3,7 +3,7 @@
 const p = console.log;
 const host = 'http://localhost';
 
-const main = async () => {
+const main = () => {
   // TODO
   fetch(host + '/sleep-api/123')
     .then((res) => res.json())
