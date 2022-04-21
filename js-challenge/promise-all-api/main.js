@@ -2,15 +2,30 @@
 
 const host = 'http://localhost';
 
-const main = () => {
-  // TODO
+const 模範解答 = () => {
+  // パラレル
   const promises = [];
   for (let i = 1; i <= 17; i++) {
     const url = host + '/sleep-api/' + i;
     const promise = fetch(url).then((res) => res.json());
     promises.push(promise);
   }
-  Promise.all(promises).then((a) => {
-    a.forEach((e) => console.log(e));
+  Promise.all(promises).then((results) => {
+    results.forEach((result) => console.log(result));
   });
+};
+
+const ありそうな間違い = async () => {
+  // シリアル
+  for (let i = 1; i <= 17; i++) {
+    const url = host + '/sleep-api/' + i;
+    const result = await fetch(url).then((res) => res.json());
+    console.log(result);
+  }
+};
+
+const main = async () => {
+  await ありそうな間違い();
+
+  模範解答();
 };
