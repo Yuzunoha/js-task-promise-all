@@ -44,3 +44,11 @@
   - method: get
   - response: string
   - 備考: 有効な{ms}の値は 1 以上 17 以下の整数
+
+## 模範解答
+
+- [/js-challenge/promise-all-api/main.js](/js-challenge/promise-all-api/main.js)
+
+## demo
+
+- https://promise-all.yuzucloud.net/demo

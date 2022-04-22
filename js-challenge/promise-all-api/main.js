@@ -25,7 +25,9 @@ const ありそうな間違い = async () => {
 };
 
 const main = async () => {
+  console.log('処理開始: ありそうな間違い');
   await ありそうな間違い();
 
+  console.log('処理開始: 模範解答');
   模範解答();
 };
