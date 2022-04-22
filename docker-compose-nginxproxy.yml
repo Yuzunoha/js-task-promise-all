@@ -5,8 +5,6 @@ services:
       context: ./docker/app
     volumes:
       - ./html:/var/www/html
-    ports:
-      - 80:80
     environment:
       TZ: Asia/Tokyo
       VIRTUAL_HOST: promise-all.yuzucloud.net
